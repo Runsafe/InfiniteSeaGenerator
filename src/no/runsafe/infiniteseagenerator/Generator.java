@@ -1,6 +1,6 @@
 package no.runsafe.infiniteseagenerator;
 
-import org.bukkit.Material;
+import no.runsafe.framework.minecraft.Item;
 import org.bukkit.World;
 import org.bukkit.generator.ChunkGenerator;
 
@@ -17,8 +17,8 @@ public class Generator extends ChunkGenerator
 		{
 			for (int z = 0; z < 16; z++)
 			{
-				result = setBlock(result, x, 60, z, (byte) Material.DIRT.getId());
-				result = setBlock(result, x, 61, z, (byte) Material.WATER.getId());
+				result = setBlock(result, x, 60, z, (byte) Item.BuildingBlock.Dirt.getItemID());
+				result = setBlock(result, x, 61, z, (byte) Item.Unavailable.Water.getItemID());
 			}
 		}
 
