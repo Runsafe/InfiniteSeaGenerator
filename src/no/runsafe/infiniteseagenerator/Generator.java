@@ -17,20 +17,19 @@ public class Generator extends ChunkGenerator
 		{
 			for (int z = 0; z < 16; z++)
 			{
-				result = setBlock(result, x, 60, z, (byte) Item.BuildingBlock.Dirt.getItemID());
-				result = setBlock(result, x, 61, z, (byte) Item.Unavailable.Water.getItemID());
+				setBlock(result, x, 60, z, (byte) Item.BuildingBlock.Dirt.getItemID());
+				setBlock(result, x, 61, z, (byte) Item.Unavailable.Water.getItemID());
 			}
 		}
 
 		return result;
 	}
 
-	private byte[][] setBlock(byte[][] result, int x, int y, int z, byte block)
+	private void setBlock(byte[][] result, int x, int y, int z, byte block)
 	{
 		if (result[y >>4] == null)
 			result[y >> 4] = new byte[4096];
 
 		result[y >> 4][((y & 0xF) << 8) | (z << 4) | x] = block;
-		return result;
 	}
 }
